@@ -1,0 +1,264 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: math;
+}
+
+header {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+}
+
+footer {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 5em;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    max-width: 60rem;
+    margin: 1em auto;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.input-container input {
+    padding: 5%;
+    margin-top: 1%;
+    border-radius: 7px;
+    border: thin solid;
+}
+
+.input-container button {
+    padding: 3%;
+    width: 45%;
+    margin-top: 10%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 1%;
+    background-color: #587ef4;
+    border-radius: 7px;
+    font-family: math;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border: thin solid black;
+}
+
+section#sort-section,
+select#sort{
+    margin: auto;
+}
+
+#save {
+    width: 92%;
+}
+
+#transaction-types-list {
+    padding: 5%;
+    margin-top: 1%;
+    border-radius: 7px;
+    border: thin solid black;
+}
+
+.budget-form,
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: rgb(243, 243, 243);
+}
+
+.budget-form h2,
+.expense-form h2 {
+    margin-bottom: 5%;
+}
+
+form.budget-form input {
+    font-size: 20px;
+}
+
+select#transaction-types-list {
+    font-size: 20px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: #587ef4;
+    margin-bottom: 5vh;
+}
+
+#summary-header-container,
+#summary-body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+
+#added-expenses li {
+    display: block;
+    padding: 1px;
+    margin: 10px;
+}
+
+#added-expenses input,
+#added-expenses select,
+#added-expenses span,
+#added-expenses li {
+    font-size: 20px;
+}
+
+#added-expenses input {
+    width: 20%;
+}
+
+#added-expenses button {
+    border: none;
+    opacity: 0;
+}
+
+#added-expenses button img {
+    border: none;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    width: 70%;
+    height: 50%;
+}
+
+div#added-expenses button:hover {
+    opacity: 1;
+}
+
+#added-expenses {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    border-radius: 50px;
+    background-color: rgb(243, 243, 243);
+}
+
+#myChart {
+    max-width: 100%; 
+    max-height: 100%; 
+    width: 100%;
+    height: 100%; 
+}
+
+.month-container {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    width: fit-content;
+
+}
+
+.month-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-size: small;
+}
+
+.month-container ul li {
+    padding: 2px 3px;
+    margin: 0.8px;
+    border: 1px solid #3013d6; 
+}
+
+@media (max-width: 45rem) {
+    .input-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .budget-form,
+    .expense-form {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .expense-form {
+        margin-top: 1%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #myChart {
+        max-width: 100%; 
+        max-height: 100%; 
+        width: 100%;
+        height: 100%; 
+    }
+    
+    .month-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .month-container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        font-size: xx-small;
+    }
+    
+    .month-container ul li {
+        padding: 1px 1px;
+        margin: 0.1px;
+        border: 0,1px solid #3013d6; 
+    }
+    .summary {
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+        border-radius: 1px;
+        background-color: #587ef4;
+        margin-bottom: 1.5vh;
+        font-size: small;
+        width: 70%;
+        align-self: center;
+  
+    }
+
+    #added-expenses {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        padding:3%;
+        margin: 10px;
+        align-self: center;
+    }
+
+    #added-expenses li {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

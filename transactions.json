@@ -1,0 +1,20 @@
+[
+    { "title": "Böcker", "amount": 60, "date": "2024-01-01" , "type": "expense" },
+    { "title": "Pennor", "amount": 10, "date": "2024-02-01" , "type": "expense" },
+    { "title": "Träning", "amount": 20, "date": "2024-03-01" , "type": "expense" },
+    { "title": "Biljett", "amount": 110, "date": "2024-04-01" , "type": "expense" },
+    { "title": "Tåg", "amount": 50, "date": "2024-05-01" , "type": "expense" },
+    { "title": "Spårvagn", "amount": 120, "date": "2024-06-01" , "type": "expense" },
+    { "title": "Bil", "amount": 40, "date": "2024-07-01" , "type": "expense" },
+    { "title": "Resa", "amount": 70, "date": "2024-08-01" , "type": "expense" },
+    { "title": "Kläder", "amount": 80, "date": "2024-09-01" , "type": "expense" },
+    { "title": "Mössa", "amount": 100, "date": "2024-10-01" , "type": "expense" },
+    { "title": "Handskar", "amount": 30, "date": "2024-11-01" , "type": "expense" },
+    { "title": "Fika", "amount": 90, "date": "2024-12-01" , "type": "expense" },
+    { "title": "Lön", "amount": 80, "date": "2024-12-01" , "type": "income" },
+    { "title": "CSN", "amount": 10, "date": "2024-06-01" , "type": "income" },
+    { "title": "Fonder", "amount": 30, "date": "2024-07-01" , "type": "income" },
+    { "title": "Aktier", "amount": 100, "date": "2024-11-01" , "type": "income" },
+    { "title": "Aktier", "amount": 50, "date": "2024-01-01" , "type": "income" }
+]
+

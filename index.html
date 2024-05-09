@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expense-tracking application to get hold of your economy">
+    <title>Budget Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+    </header>
+    <main>
+        <div id="app">
+            <div class="input-container">
+                <form @submit.prevent="addTransaction" class="budget-form">
+                    <h2>Transaktioner</h2>
+
+                    <input type="text" v-model="title" placeholder="Ny utgift" required>
+                    <input type="number" v-model="amount" placeholder="Summa" required>
+
+                    <select v-model="type" id="transaction-types-list" required>
+                        <option disabled value="">Välj nedan</option>
+                        <option value="income">Inkomst</option>
+                        <option value="expense">Utgifter</option>
+                    </select>
+
+                    <input type="date" v-model="date" required>
+
+                    <button id="save" @click="addTransaction">Spara</button>
+
+                </form>
+
+                <form class="expense-form" @submit.prevent="addTransaction">
+                    <h2>Diagram</h2>
+                    <canvas id="myChart" width="600px" height="200px"></canvas>
+                    <div class="month-container">
+                        <ul>
+                            <li>JAN</li>
+                            <li>FEB</li>
+                            <li>MARS</li>
+                            <li>APR</li>
+                            <li>MAJ</li>
+                            <li>JUN</li>
+                            <li>JUL</li>
+                            <li>AUG</li>
+                            <li>SEP</li>
+                            <li>OKT</li>
+                            <li>NOV</li>
+                            <li>DEC</li>
+                        </ul>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="summary">
+                <div id="summary-header-container">
+                    <p>Total Inkomst: {{ totalIncome }} Kr</p>
+                    <p>Total Utgifter: {{ totalExpense }} Kr</p>
+                    <p>Total Balans: {{ totalBalance }} Kr</p>
+                </div>
+            </div>
+
+            <div id="added-expenses">
+
+                <h2>Översikt</h2>
+            <section id="sort-section">
+                <label for="sort">Sortera:</label>
+                <select id="sort" v-model="sortMode" @change="sortTransactions">
+                    <option disabled value="">Välj</option>
+                    <option value="lowToHigh">Lågt till högt</option>
+                    <option value="highToLow">Högt till lågt</option>
+                    <option value="oldToNew">Datum tidigast</option>
+                    <option value="newToOld">Datum senast</option>
+                </select>
+            </section>
+        
+                <ul>
+                    <li v-for="(transaction, index) in sortedTransactions" :key="index">
+                        <span v-if="index !== editingIndex">
+                            {{ transaction.title }} - {{ transaction.amount }} Kr - {{ transaction.date }} - {{ transaction.type }}
+                            
+                            <button id="delete" @click="removeTransaction(index)">
+                                <img src="remove.png" alt="Tabort">
+                            </button>
+
+                            <button @click="editTransaction(index)">
+                                <img src="change.png" alt="Ändra">
+                            </button>
+
+                        </span>
+                        <span v-else>
+                            <input type="text" v-model="editingTransaction.title">
+                            <input type="number" v-model="editingTransaction.amount">
+                            <input type="date" v-model="editingTransaction.date" placeholder="Datum">
+                            <select v-model="editingTransaction.type">
+                                <option value="income">Inkomst</option>
+                                <option value="expense">Utgifter</option>
+                            </select>
+
+                            <button @click="saveTransaction(index)">
+                                <img src="save.png" alt="Spara">
+                            </button>
+
+                            <button @click="cancelEdit">
+                                <img src="cancel.png" alt="Avbryt">
+                            </button>
+                            
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p>Written by Mustafa Ucler, Abdulrahman Ambdi and Said Abdiqadir Ahmed</p>
+    </footer>
+</body>
+</html>
